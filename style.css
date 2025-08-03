@@ -2509,3 +2509,75 @@ body {
     color: var(--color-accent-gold);
   }
 }
+/* Leeila Fine-Tuned Agent Variable Input Form */
+.ai-form {
+    background: #f5f7fa;
+    padding: 24px 18px 18px 18px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 12px rgba(107, 70, 193, 0.09);
+    border: 1.5px solid var(--color-primary-purple, #6B46C1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ai-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    margin-bottom: 2px;
+    font-weight: 500;
+    color: var(--color-primary-purple-dark, #553C9A);
+}
+
+.ai-form input[type="text"] {
+    padding: 9px 12px;
+    border: 1.5px solid var(--color-primary-purple, #6B46C1);
+    border-radius: 6px;
+    font-size: 15px;
+    margin-top: 6px;
+    margin-bottom: 9px;
+    background: #fff;
+    transition: border 0.2s;
+    outline: none;
+}
+
+.ai-form input[type="text"]:focus {
+    border-color: var(--color-primary-blue, #3B82F6);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.13);
+}
+
+.ai-form .btn {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 0;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(59, 130, 246, 0.08);
+    transition: background 0.18s;
+}
+
+.ai-form .btn:hover {
+    background: var(--gradient-secondary);
+    color: #fff;
+}
+
+#aiResponse.agent-message {
+    background: #fff;
+    margin: 20px auto 0 auto;
+    max-width: 440px;
+    border-radius: 9px;
+    box-shadow: 0 1px 6px rgba(59,130,246,0.07);
+    padding: 16px;
+    font-size: 16px;
+    color: var(--color-primary-purple-dark, #553C9A);
+    word-break: break-word;
+}
