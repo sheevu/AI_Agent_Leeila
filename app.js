@@ -311,7 +311,7 @@ class OpenAIIntegration {
     
     getStoredApiKey() {
         // Simple encoding for basic protection (not cryptographically secure)
-        const encoded = sessionStorage.getItem('leeila_api_key');
+const encoded = sessionStorage.getItem('OPENAI_API_KEY');
         return encoded ? atob(encoded) : '';
     }
     
@@ -319,9 +319,9 @@ class OpenAIIntegration {
         this.apiKey = key;
         if (key) {
             // Simple encoding for basic protection
-            sessionStorage.setItem('leeila_api_key', btoa(key));
+sessionStorage.setItem('OPENAI_API_KEY', btoa(key));
         } else {
-            sessionStorage.removeItem('leeila_api_key');
+sessionStorage.removeItem('OPENAI_API_KEY');
         }
         this.updateUI();
     }
