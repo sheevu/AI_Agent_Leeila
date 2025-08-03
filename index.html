@@ -31,7 +31,18 @@
     <!-- Main Container -->
     <div class="main-container">
         <div class="container">
-            <!-- Chat Interface - TOP PRIORITY FOR MOBILE -->
+            <!-- ====== Leeila Fine-Tuned Agent Variable Input Form ====== -->
+<div class="ai-form" style="margin-bottom:30px;">
+    <h3 class="gradient-text-heading">Leeila (Fine-Tuned Agent): Get Personalized Guidance</h3>
+    <label>Business Type: <input id="business_type" type="text" placeholder="eg. Kirana Store" value="Kirana Store"></label>
+    <label>Selected Services: <input id="selected_services" type="text" placeholder="eg. Online site + Hindi CRM" value="Online site + Hindi CRM"></label>
+    <label>User Budget: <input id="user_budget" type="text" placeholder="eg. 89" value="89"></label>
+    <label>Key Benefit: <input id="key_benefit" type="text" placeholder="eg. Quick digital launch for MSME" value="Quick digital launch for MSME"></label>
+    <button id="submitPromptVars" class="btn btn--primary" style="margin-top:10px;">Ask Leeila (AI Demo)</button>
+</div>
+<div id="aiResponse" class="agent-message"></div>
+<!-- ====== END Leeila Section ====== -->
+    <!-- Chat Interface - TOP PRIORITY FOR MOBILE -->
             <div class="chat-container" id="chatContainer">
                 <div class="chat-header">
                     <div class="agent-info">
