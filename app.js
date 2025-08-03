@@ -494,7 +494,41 @@ Company context:
         this.updateUI();
     }
 }
+// --- NEW: Prompt-ID based response call (variable slotting) ---
+async function generatePromptIdResponse(vars) {
+    try {
+        const response = await fetch("https://api.openai.com/v1/responses", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${openAI.apiKey}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                prompt: {
+                    id: "pmpt_68536352c9a4819396c962c3d94f3c9d0f20316ee7ecc78a", // <--- your prompt ID
+                    version: "16",
+                    variables: {
+                        business_type: vars.business_type,
+                        selected_services: vars.selected_services,
+                        user_budget: vars.user_budget,
+                        key_benefit: vars.key_benefit
+                    }
+                }
+            })
+        });
 
+        if (!response.ok) throw new Error("OpenAI API error");
+        const data = await response.json();
+        openAI.incrementUsage();
+        return {
+            text: data.result || data.text || "Sorry, could not understand. Try again.",
+            followUp: "Need more help? I'm here to assist you with any questions about our services!"
+        };
+    } catch (e) {
+        console.error("API call failed", e);
+        return { text: "Sorry, could not process your request." }
+    }
+}
 // Application state
 let currentBusinessType = '';
 let selectedServices = [];
